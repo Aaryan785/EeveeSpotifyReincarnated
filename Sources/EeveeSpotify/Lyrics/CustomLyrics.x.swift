@@ -20,13 +20,6 @@ private let petitLyricsRepository = PetitLyricsRepository()
 // Overload for 9.1.6 where we only have track ID from URL
 private func loadCustomLyricsForTrackId(_ trackId: String) throws -> Lyrics {
 
-    // Covers both callers of this function — prefetchLyricsIfNeeded and
-    // getLyricsDataForCurrentTrack's bounded-wait fallback — so every fetch,
-    // however it started, is recorded here before any network call. See
-    // KaraokeLyricsStore.latestRequestedTrackId's doc comment for why this
-    // needs to happen at request *start*, not completion.
-    KaraokeLyricsStore.shared.noteRequestStarted(trackId: trackId)
-
     var source = UserDefaults.lyricsSource
 
     var currentTitle: String? = nil
@@ -203,10 +196,6 @@ private func loadCustomLyricsForCurrentTrack() throws -> Lyrics {
     
     let trackTitle = track.trackTitle()
     let artistName = track.artistName()
-
-    // Same reasoning as loadCustomLyricsForTrackId's call to this — see
-    // KaraokeLyricsStore.latestRequestedTrackId's doc comment.
-    KaraokeLyricsStore.shared.noteRequestStarted(trackId: track.trackIdentifier)
 
     let searchQuery = LyricsSearchQuery(
         title: trackTitle,
@@ -401,11 +390,7 @@ func getLyricsDataForCurrentTrack(_ originalPath: String, originalLyrics: Lyrics
         throw LyricsError.noCurrentTrack
     }
 
-    // See the comment on updateTrackIdFromLyricsFetch itself for why this is
-    // here: on builds where KaraokePlaybackTracker's usual player-observer
-    // registration fails, this is the only reliable source it has for the
-    // current track ID, and this call site fires on every real track change
-    // regardless of that.
+    // The player observer doesn't attach on 9.1.x, so the lyrics request is the current-track signal.
     KaraokePlaybackTracker.shared.updateTrackIdFromLyricsFetch(trackIdentifier)
 
     if capturedTrackId != trackIdentifier {

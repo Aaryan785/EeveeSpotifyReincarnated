@@ -2,13 +2,8 @@ import SwiftUI
 
 struct EeveeLyricsSettingsView: View {
     @StateObject var viewModel = EeveeLyricsSettingsViewModel()
-    // Local mirror of UserDefaults.karaokeOptions — that's a plain computed
-    // static var (backed by the @UserDefault property wrapper), not
-    // @Published, so it can't be bound directly with $viewModel-style
-    // syntax. Mirroring it into @State and writing back via onChange is the
-    // standard way to give a plain UserDefaults-backed value SwiftUI
-    // binding support without changing how @UserDefault itself works.
     @State private var karaokeOptions: KaraokeOptions = UserDefaults.karaokeOptions
+    @State private var spicyLyricsApiKey: String = UserDefaults.spicyLyricsApiKey
 
     var body: some View {
         List {
@@ -27,7 +22,9 @@ struct EeveeLyricsSettingsView: View {
                 }
 
                 if viewModel.lyricsSource == .spicylyrics {
+                    spicyLyricsApiKeySection()
                     karaokeAppearanceSection()
+                    SettingsResetSection(visible: karaokeOptions != KaraokeOptions()) { karaokeOptions = KaraokeOptions() }
                 }
             }
 
@@ -36,28 +33,41 @@ struct EeveeLyricsSettingsView: View {
         .onReceive(viewModel.musixmatchTokenInputAlertPublisher) { showAnonymousTokenOption in
             showMusixmatchTokenAlert(UserDefaults.lyricsSource, showAnonymousTokenOption)
         }
-        .listStyle(GroupedListStyle())
+        .eeveeSettingsStyle()
         .disabled(viewModel.isRequestingMusixmatchToken)
         .animation(.default, value: viewModel.animationValues)
         .onChange(of: karaokeOptions) { UserDefaults.karaokeOptions = $0 }
+        .onChange(of: spicyLyricsApiKey) { UserDefaults.spicyLyricsApiKey = $0 }
+    }
+
+    @ViewBuilder private func spicyLyricsApiKeySection() -> some View {
+        Section {
+            TextField("spicylyrics_api_key_placeholder".localized, text: $spicyLyricsApiKey)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+        } header: {
+            Text("spicylyrics_api_key".localized)
+        } footer: {
+            Text("spicylyrics_api_key_description".localized)
+        }
     }
 
     @ViewBuilder private func karaokeAppearanceSection() -> some View {
         Section {
-            Picker("Lyrics alignment", selection: $karaokeOptions.textAlignment) {
+            Picker("karaoke_alignment".localized, selection: $karaokeOptions.textAlignment) {
                 ForEach(KaraokeTextAlignment.allCases, id: \.self) { alignment in
                     Text(alignment.displayName).tag(alignment)
                 }
             }
 
             Toggle(
-                "Reversed direction",
+                "karaoke_reversed_direction".localized,
                 isOn: $karaokeOptions.reversedDirection
             )
         } header: {
-            Text("Word-Synced Lyrics")
+            Text("karaoke_section".localized)
         } footer: {
-            Text("Reversed direction flows lines bottom-to-top instead of top-to-bottom, with the active line lower on screen.")
+            Text("karaoke_section_footer".localized)
         }
     }
     

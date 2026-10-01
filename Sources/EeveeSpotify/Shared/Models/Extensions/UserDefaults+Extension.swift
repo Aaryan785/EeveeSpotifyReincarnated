@@ -117,4 +117,9 @@ extension UserDefaults {
             container.set(cleanShareLinks, forKey: cleanShareLinksKey)
         }
     }
+
+    static var roundedArtwork: Bool {
+        get { container.bool(forKey: "eeveeRoundedArtwork") }
+        set { container.set(newValue, forKey: "eeveeRoundedArtwork") }
+    }
 }
