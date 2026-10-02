@@ -3,7 +3,7 @@ import Foundation
 extension UserDefaults {
     private static let spicyLyricsApiKeyKey = "spicyLyricsApiKey"
 
-    static let spicyLyricsDefaultApiKey = "sl_pk_G8Qy4fZZClTOroYqCaUzlk4MEQacWtw1LAmHQ5MsKSg"
+    static let spicyLyricsDefaultApiKey = "sl_pk_2bickG_gRxepd6CvYUPwUpsMcLWaOE9zJ3mdk9fEF8Y"
 
     static var spicyLyricsApiKey: String {
         get {
