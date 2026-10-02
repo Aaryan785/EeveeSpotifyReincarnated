@@ -54,16 +54,33 @@ struct EeveeLyricsSettingsView: View {
 
     @ViewBuilder private func karaokeAppearanceSection() -> some View {
         Section {
-            Picker("karaoke_alignment".localized, selection: $karaokeOptions.textAlignment) {
-                ForEach(KaraokeTextAlignment.allCases, id: \.self) { alignment in
-                    Text(alignment.displayName).tag(alignment)
+            Toggle(
+                "karaoke_enabled".localized,
+                isOn: $karaokeOptions.enabled
+            )
+
+            if karaokeOptions.enabled {
+                Picker("karaoke_alignment".localized, selection: $karaokeOptions.textAlignment) {
+                    ForEach(KaraokeTextAlignment.allCases, id: \.self) { alignment in
+                        Text(alignment.displayName).tag(alignment)
+                    }
+                }
+
+                Toggle(
+                    "karaoke_reversed_direction".localized,
+                    isOn: $karaokeOptions.reversedDirection
+                )
+
+                VStack(alignment: .leading, spacing: 5) {
+                    HStack {
+                        Text("karaoke_blur_intensity".localized)
+                        Spacer()
+                        Text(String(format: "%.1f", karaokeOptions.blurIntensity))
+                            .foregroundColor(.gray)
+                    }
+                    Slider(value: $karaokeOptions.blurIntensity, in: 0...4, step: 0.1)
                 }
             }
-
-            Toggle(
-                "karaoke_reversed_direction".localized,
-                isOn: $karaokeOptions.reversedDirection
-            )
         } header: {
             Text("karaoke_section".localized)
         } footer: {

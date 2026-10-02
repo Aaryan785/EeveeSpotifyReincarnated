@@ -1,7 +1,9 @@
 import SwiftUI
 
 extension EeveeLyricsSettingsView {
-    private func lyricsSourceFooter() -> some View {
+    private static let spicyTemplateURL = "https://developers.spicylyrics.org/catalog/eeveespotifyreincarnated"
+
+    private func lyricsSourceFooterText() -> String {
         var text = "lyrics_source_description".localized
 
         text.append("\n\n")
@@ -13,7 +15,30 @@ extension EeveeLyricsSettingsView {
         text.append("\n\n")
         text.append("lyrics_additional_info".localized)
 
-        return Text(text)
+        return text
+    }
+
+    @ViewBuilder private func lyricsSourceFooter() -> some View {
+        let text = lyricsSourceFooterText()
+
+        if #available(iOS 15.0, *) {
+            Text(spicyLinkedAttributedString(text))
+        } else {
+            Text(text)
+        }
+    }
+
+    // The link text is localized together with spicylyrics_description, so find it by its own key.
+    @available(iOS 15.0, *)
+    private func spicyLinkedAttributedString(_ text: String) -> AttributedString {
+        var attributed = AttributedString(text)
+
+        if let range = attributed.range(of: "spicylyrics_template_link".localized),
+           let url = URL(string: Self.spicyTemplateURL) {
+            attributed[range].link = url
+        }
+
+        return attributed
     }
     
     @ViewBuilder func lyricsSourceSection() -> some View {

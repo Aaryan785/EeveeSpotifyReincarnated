@@ -118,7 +118,15 @@ struct EeveeSettingsView: View {
                 }
             }
 
-            Section(header: Text("troubleshooting".localized)) {
+            Section(header: Text("troubleshooting".localized), footer: Text("debug_section_footer".localized)) {
+                Toggle(
+                    "debug_logging".localized,
+                    isOn: Binding<Bool>(
+                        get: { UserDefaults.debugLoggingEnabled },
+                        set: { UserDefaults.debugLoggingEnabled = $0 }
+                    )
+                )
+
                 Button(action: exportDebugLog) {
                     SettingsLabel(title: "export_debug_log".localized, icon: "square.and.arrow.up", color: .blue)
                 }

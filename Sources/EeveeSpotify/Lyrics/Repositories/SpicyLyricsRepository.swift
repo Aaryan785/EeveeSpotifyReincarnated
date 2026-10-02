@@ -106,7 +106,7 @@ class SpicyLyricsRepository: LyricsRepository {
         let dto: LyricsDto
         switch type {
         case "Syllable": dto = parseSyllableLyrics(root, trackId: trackId, query: query, options: options)
-        case "Line":     dto = parseLineLyrics(root)
+        case "Line":     dto = parseLineLyrics(root, trackId: trackId, query: query, options: options)
         case "Static":   dto = parseStaticLyrics(root)
         default:
             eeveeLog("[EeveeSpotify][SpicyLyrics] %@ unknown type '%@'", trackId, type)
@@ -222,22 +222,61 @@ class SpicyLyricsRepository: LyricsRepository {
 
     // MARK: Line lyrics
 
-    private func parseLineLyrics(_ root: SpicyLyricsJSON) -> LyricsDto {
+    private func parseLineLyrics(_ root: SpicyLyricsJSON, trackId: String, query: LyricsSearchQuery, options: LyricsOptions) -> LyricsDto {
         guard let content = root["Content"]?.arrayValue else { return emptyDto() }
 
         var lines        = [LyricsLineDto]()
+        var karaokeLines = [KaraokeLineDto]()
         let hasRomanized = root["HasTransliterations"]?.boolValue ?? false
 
         for entry in content {
             guard entry["Type"]?.stringValue == "Vocal" else { continue }
             let text      = SpicyLyricsRepository.leadText(entry)
             let startTime = entry["Lead"]?["StartTime"]?.doubleValue ?? entry["StartTime"]?.doubleValue
-            lines.append(LyricsLineDto(content: text.lyricsNoteIfEmpty, offsetMs: startTime.map { Int($0 * 1000) }))
+            let endTime   = entry["Lead"]?["EndTime"]?.doubleValue ?? entry["EndTime"]?.doubleValue
+            let startMs   = startTime.map { Int($0 * 1000) }
+            lines.append(LyricsLineDto(content: text.lyricsNoteIfEmpty, offsetMs: startMs))
+
+            // Line-synced songs still get the custom lyrics view: every word lights up with its line.
+            guard let lineStartMs = startMs, !text.isEmpty else { continue }
+            let words = text.split(separator: " ", omittingEmptySubsequences: true)
+            guard !words.isEmpty else { continue }
+
+            let lineEndMs = max(endTime.map { Int($0 * 1000) } ?? lineStartMs, lineStartMs)
+            karaokeLines.append(KaraokeLineDto(
+                syllables: words.map {
+                    KaraokeSyllableDto(text: String($0), startMs: lineStartMs, endMs: lineStartMs, isPartOfWord: false)
+                },
+                startMs: lineStartMs,
+                endMs: lineEndMs
+            ))
         }
 
         let romanization: LyricsRomanizationStatus = hasRomanized
             ? .romanized
             : (lines.map(\.content).canBeRomanized ? .canBeRomanized : .original)
+
+        if !karaokeLines.isEmpty {
+            let attribution = root["UploadAttribution"]
+            let filledKaraokeLines = LyricsUncensorFill.fillKaraoke(
+                lines: karaokeLines,
+                query: query,
+                options: options
+            )
+
+            KaraokeLyricsStore.shared.set(
+                trackId: trackId,
+                lyrics: KaraokeLyricsDto(
+                    lines: SpicyLyricsRepository.normalizeMonotonicTiming(filledKaraokeLines),
+                    songWriters: root["SongWriters"]?.arrayValue?.compactMap { $0.stringValue } ?? [],
+                    providerCode: root["source"]?.stringValue,
+                    uploaderName: attribution?["Uploader"]?["username"]?.stringValue,
+                    uploaderUrl: attribution?["Uploader"]?["url"]?.stringValue,
+                    makerName: attribution?["Maker"]?["username"]?.stringValue,
+                    makerUrl: attribution?["Maker"]?["url"]?.stringValue
+                )
+            )
+        }
 
         return LyricsDto(
             lines: lines,

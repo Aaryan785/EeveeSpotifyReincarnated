@@ -17,6 +17,7 @@ enum EeveeLog {
 
     static func write(_ line: String) {
         NSLog("%@", line)
+        guard UserDefaults.debugLoggingEnabled else { return }
         let date = Date()
         queue.async { append("\(stamp.string(from: date)) \(line)\n") }
     }

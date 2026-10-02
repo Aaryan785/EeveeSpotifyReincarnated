@@ -12,6 +12,10 @@ final class KaraokeOverlayPresenter {
 
     static func present() {
         guard !isPresented else { return }
+        guard UserDefaults.karaokeOptions.enabled else {
+            writeDebugLog("[Karaoke] present() skipped: custom lyrics view disabled in settings")
+            return
+        }
         guard #available(iOS 15.0, *) else {
             writeDebugLog("[Karaoke] present() skipped: requires iOS 15+")
             return
@@ -43,6 +47,7 @@ final class KaraokeOverlayPresenter {
     /// whatever decides whether to show a "Karaoke" button at all) should
     /// check this rather than always presenting and risking a no-op.
     static func isAvailableForCurrentTrack() -> Bool {
+        guard UserDefaults.karaokeOptions.enabled else { return false }
         guard let trackId = KaraokePlaybackTracker.shared.currentTrackId() else { return false }
         return KaraokeLyricsStore.shared.lyrics(forTrackId: trackId) != nil
     }

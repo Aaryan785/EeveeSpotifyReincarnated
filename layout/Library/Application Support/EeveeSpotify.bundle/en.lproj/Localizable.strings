@@ -47,7 +47,7 @@ LRCLIB: The most open service, offering time-synced lyrics. However, it lacks ly
 
 Musixmatch: The service Spotify uses. Provides time-synced lyrics for many songs, but you'll need a user token to use this source.";
 lyrics_additional_info = "If EeveeSpotify is unable to find a song or process the lyrics, you'll see a \"Couldn't load the lyrics for this song\" message. The lyrics might be wrong for some songs when using Genius due to how the tweak searches songs. I've made it work in most cases.";
-spicylyrics_description = "SpicyLyrics provides word-by-word karaoke lyrics using Spotify's own token. No extra setup needed.";
+spicylyrics_description = "SpicyLyrics provides word-by-word karaoke lyrics. A built-in key is used by default. If you want to use your own key, go to Spicy ESR template, then press the Sign in button. After you sign in, agree to the ToS of Spicy and press Add ESR to my account. After it's added, copy the generated key, paste it into the Eevee lyrics section, then go back to Spicy and click I have stored it. Go to the apps page.";
 petitlyrics_description = "PetitLyrics: Offers plenty of time-synced Japanese and some international lyrics.";
 
 musixmatch_user_token = "Musixmatch User Token";
@@ -70,7 +70,7 @@ romanized_lyrics_description = "Display romanized lyrics for Japanese, Korean, a
 musixmatch_language = "Musixmatch Lyrics Language";
 musixmatch_language_description = "You can enter a 2-letter Musixmatch language code and see translated lyrics on Musixmatch if they are available.";
 
-karaoke_word_synced_button = "Word-Synced";
+karaoke_word_synced_button = "Custom Lyrics view";
 
 // UI
 
@@ -145,7 +145,7 @@ contributors = "Contributors";
 developer_note = "Developer's Note";
 
 support_the_project = "Support the Project";
-support_the_project_description = "Your contributions keep this tweak updated and help buy Hysan a courage potion for Elsa.";
+support_the_project_description = "Fuel late-night code";
 
 request_anonymous_token = "Request Anonymous Token";
 request_anonymous_token_description = "Tap “Request Anonymous Token” to request a token from Musixmatch without authorization.";
@@ -167,9 +167,9 @@ export_debug_log = "Export Debug Log";
 clear_debug_log = "Clear Debug Log";
 debug_log_cleared = "Debug log cleared.";
 debug_log_cleared_ok = "OK";
-no_debug_log_found = "No debug log found. The log starts recording when the app launches.";
+no_debug_log_found = "No debug log found. The log starts recording when the debug logging option is enabled.";
 no_debug_log_found_ok = "OK";
-debug_section_footer = "Export or clear the debug log.";
+debug_section_footer = "Turn on logging, then export or clear the log.";
 
 // Full reset
 resetButtonTitle = "Full Reset";
@@ -515,8 +515,8 @@ appearance_pages = "Pages";
 tab_bar_subtitle = "Order, launch tab, custom tabs";
 lyrics_written_by = "Written by:";
 lyrics_provided_by = "Lyrics provided by";
-karaoke_section = "Word-Synced Lyrics";
-karaoke_section_footer = "Reversed direction flows lines bottom-to-top.";
+karaoke_section = "Custom Lyrics View";
+karaoke_section_footer = "Reversed direction flows lines bottom-to-top, with the active line lower on screen. Blur intensity controls how blurred inactive lines appear.";
 karaoke_alignment = "Lyrics alignment";
 karaoke_alignment_leading = "Left";
 karaoke_alignment_center = "Center";
@@ -526,3 +526,7 @@ episode_header = "Episode %@";
 home_gradient_style = "Style";
 home_gradient_style_gradient = "Gradient";
 home_gradient_style_solid = "Solid";
+spicylyrics_template_link = "Spicy ESR template";
+debug_logging = "Debug Logging";
+karaoke_enabled = "Custom lyrics view";
+karaoke_blur_intensity = "Blur intensity";
