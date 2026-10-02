@@ -286,3 +286,7 @@ managingSegmentsSectionDeps2 = "Cài đặt ➔ 'Báo cáo & bản nháp' lưu g
 categoriesTitle = "Các danh mục";
 categoriesSectionTitle1 = "Hành động theo từng danh mục";
 categoriesSectionDeps1 = "Tắt = bỏ qua. Hiển thị = chỉ vẽ trên thanh tiến trình. Thủ công = nhắc trước khi bỏ qua. Tự động = bỏ qua trong im lặng.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Hỗ trợ dự án";
+support_the_project_description = "Đóng góp của bạn giúp tweak này được cập nhật và giúp Hysan mua một lọ thuốc dũng cảm cho Elsa.";

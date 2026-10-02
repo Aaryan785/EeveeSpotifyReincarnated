@@ -137,3 +137,7 @@ play_songs_in_any_order = "Треки в любом порядке";
 organize_listening_queue = "Добавление треков в очередь";
 
 payment_notice = "EeveeSpotify применяет патчи, которые активируют некоторые возможности Premium. Это бесплатно.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Поддержать проект";
+support_the_project_description = "Ваш вклад помогает обновлять этот твик и покупать Хисану зелье смелости для Эльзы.";

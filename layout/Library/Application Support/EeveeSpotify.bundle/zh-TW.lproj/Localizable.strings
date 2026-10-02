@@ -296,3 +296,7 @@ managingSegmentsSectionDeps2 = "設定 → 「回報和草稿」將會儲存您�
 categoriesTitle = "分類";
 categoriesSectionTitle1 = "分類動作";
 categoriesSectionDeps1 = "關閉 = 忽略，顯示 = 僅在進度列上顯示片段，手動 = 跳過前詢問，自動 = 直接跳過";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "支持本專案";
+support_the_project_description = "你的支持讓這個 tweak 持續更新，也幫 Hysan 幫 Elsa 買一份勇氣的藥水。";

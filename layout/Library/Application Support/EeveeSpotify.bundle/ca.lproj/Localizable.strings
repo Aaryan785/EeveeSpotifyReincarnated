@@ -153,3 +153,6 @@ no_debug_log_found = "No s'ha trobat l'arxiu de depuració. El registre comença
 no_debug_log_found_ok = "D'acord";
 debug_section_footer = "Exporta o neteja l'arxiu de depuració.";
 
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Dona suport al projecte";
+support_the_project_description = "Les teves contribucions mantenen actualitzada aquesta modificació i ajuden a comprar a Hysan una poció de valor per a Elsa.";

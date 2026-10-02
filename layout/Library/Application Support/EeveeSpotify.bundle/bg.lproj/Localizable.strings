@@ -99,3 +99,7 @@ unknown_error = "Неизвестна грешка";
 
 song_is_instrumental = "Тази песен е инструментална.";
 let_the_music_play = "Нека музиката звучи...";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Подкрепете проекта";
+support_the_project_description = "Вашите дарения поддържат тази модификация актуализирана и помагат да се купи бутилка смелост за Hysan заради Elsa.";

@@ -102,3 +102,7 @@ request_anonymous_token = "Anonim token istə";
 request_anonymous_token_description = "Musixmatch-dan anonim token almaq üçün 'Anonim token istə' düyməsinə toxunun.";
 
 lrclib_api = "Server ünvanı";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Layihəni dəstəkləyin";
+support_the_project_description = "Kontribusiyalarınız bu tweak-in yenilənməsini saxlayır və Hysan-ə Elsa üçün cürət dərmanı almağa kömək edir.";

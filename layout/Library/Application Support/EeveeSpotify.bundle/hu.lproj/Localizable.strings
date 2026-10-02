@@ -113,3 +113,7 @@ contributors = "Hozzájárulók";
 
 request_anonymous_token = "Névtelen token kérése";
 request_anonymous_token_description = "Érintse meg a „Névtelen token kérése” lehetőséget, ha engedély nélkül szeretne tokent kérni a Musixmatch-től.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Támogasd a projektet";
+support_the_project_description = "A hozzájárulásaid frissen tartják ezt a tweaket, és segítenek Hysannak bátorságitalt vásárolni Elzáért.";

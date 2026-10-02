@@ -286,3 +286,7 @@ managingSegmentsSectionDeps2 = "در مسیر تنظیمات ← «گزارش‌
 categoriesTitle = "دسته‌بندی‌ها";
 categoriesSectionTitle1 = "عملکرد هر دسته‌بندی";
 categoriesSectionDeps1 = "خاموش = نادیده گرفتن. نمایش = فقط روی نوار نمایش داده شود. دستی = قبل از رد کردن سؤال شود. خودکار = بدون نمایش پیام به‌صورت خودکار رد شود.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "از پروژه حمایت کنید";
+support_the_project_description = "مشارکت شما این تغییرات را به‌روز نگه می‌دارد و کمک می‌کند Hysan برای Elsa یک معجون شجاعت بخرد.";

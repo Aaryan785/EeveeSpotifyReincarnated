@@ -286,3 +286,7 @@ managingSegmentsSectionDeps2 = "الإعدادات ← 'البلاغات وال�
 categoriesTitle = "الأقسام";
 categoriesSectionTitle1 = "أفعال الأقسام";
 categoriesSectionDeps1 = "قفل = تجاهل، إظهار = هيظهر المقطع على شريط التقدم بس، يدوي = هيسألك قبل التخطي، تلقائي = هيتخطى على طول.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "ادعم المشروع";
+support_the_project_description = "مساهماتك تُبقي هذا التعديل محدَّثًا وتساعد في شراء جرعة شجاعة لـ Hysan من أجل Elsa.";

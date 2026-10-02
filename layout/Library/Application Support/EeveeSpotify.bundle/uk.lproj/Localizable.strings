@@ -138,3 +138,7 @@ play_songs_in_any_order = "Слухайте треки в будь-якому п
 organize_listening_queue = "Керування чергою прослуховування";
 
 payment_notice = "EeveeSpotify застосовує патчі, щоб розблокувати деякі функції Premium. Це безкоштовно.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Підтримати проєкт";
+support_the_project_description = "Ваш внесок допомагає оновлювати цей твік і купити Гисану зілля хоробрості для Ельзи.";

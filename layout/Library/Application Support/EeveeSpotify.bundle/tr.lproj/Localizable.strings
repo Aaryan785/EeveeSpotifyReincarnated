@@ -296,3 +296,7 @@ managingSegmentsSectionDeps2 = "Ayarlar → 'Raporlama ve taslaklar' devam eden 
 categoriesTitle = "Kategoriler";
 categoriesSectionTitle1 = "Kategori bazlı eylemler";
 categoriesSectionDeps1 = "Kapalı = yok say. Göster = yalnızca çubuk üzerine çiz. Manuel = atlamadan önce sor. Otomatik = sessizce atla.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Projeyi destekle";
+support_the_project_description = "Katkıların bu tweak'i güncel tutmaya ve Hysan'ın Elsa için bir cesaret iksiri almasına yardımcı olur.";

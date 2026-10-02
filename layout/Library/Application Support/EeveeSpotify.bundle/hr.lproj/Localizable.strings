@@ -115,3 +115,7 @@ request_anonymous_token = "Zatraži anonimni token";
 request_anonymous_token_description = "Dodirnite 'Zatraži anonimni token' za zahtjev tokena od Musixmatcha bez autorizacije.";
 
 lrclib_api = "Adresa poslužitelja";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Podrži projekt";
+support_the_project_description = "Vaši doprinosi održavaju ovaj tweak ažurnim i pomažu Hysanu kupiti napitak hrabrosti za Elsu.";

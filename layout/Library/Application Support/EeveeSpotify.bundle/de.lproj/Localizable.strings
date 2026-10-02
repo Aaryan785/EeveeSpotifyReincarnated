@@ -136,3 +136,7 @@ play_songs_in_any_order = "Musik in beliebiger Reihenfolge abspielen";
 organize_listening_queue = "Wiedergabeliste anpassen";
 payment_notice = "EeveeSpotify wendet Patches an, um bestimmte Premium-Funktionen freizuschalten. Es ist kostenlos.";
  
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Projekt unterstützen";
+support_the_project_description = "Deine Beiträge halten dieses Tweaks aktuell und helfen dabei, Hysan einen Mut-Trank für Elsa zu kaufen.";

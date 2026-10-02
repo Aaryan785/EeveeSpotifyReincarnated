@@ -110,3 +110,7 @@ let_the_music_play = "Deixa a música tocar...";
 liked_songs = "Músicas de que Gostaste";
 
 contributors = "Contribuidores";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Apoia o projeto";
+support_the_project_description = "As tuas contribuições mantêm esta modificação atualizada e ajudam o Hysan a comprar uma poção de coragem para a Elsa.";

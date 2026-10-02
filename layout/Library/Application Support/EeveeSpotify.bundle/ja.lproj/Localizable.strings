@@ -139,3 +139,7 @@ play_songs_in_any_order = "好きな曲順で再生";
 organize_listening_queue = "次に再生する楽曲のリストを整理できる";
 
 payment_notice = "EeveeSpotifyは、無料で一部のプレミアムの機能を使えるようにするパッチを適用します。";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "プロジェクトを支援";
+support_the_project_description = "ご支援によってこの tweak の更新が続き、Hysan が Elsa 用の勇気のポーションを買う助けになります。";

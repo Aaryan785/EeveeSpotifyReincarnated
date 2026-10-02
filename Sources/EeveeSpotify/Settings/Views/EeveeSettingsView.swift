@@ -27,6 +27,15 @@ struct EeveeSettingsView: View {
         PopUpHelper.showPopUp(message: "debug_log_cleared".localized, buttonText: "debug_log_cleared_ok".localized)
     }
 
+    // Ko-fi is where the tweak is funded from. It is the only place we ask for
+    // money, so the button lives with the other "about" style rows near the
+    // bottom of the page rather than up in the feature groups.
+    private static let supportURL = URL(string: "https://ko-fi.com/jaydenjcpy")!
+
+    private func openSupportPage() {
+        UIApplication.shared.open(Self.supportURL)
+    }
+
     private func wipe(_ work: @escaping () -> Void) {
         isClearingData = true
         DispatchQueue.global(qos: .userInitiated).async {
@@ -96,6 +105,17 @@ struct EeveeSettingsView: View {
             }
             .sheet(isPresented: $isPresentingDevNoteSheet) {
                 EeveeDevNoteView()
+            }
+
+            Section {
+                Button(action: openSupportPage) {
+                    SettingsLabel(
+                        title: "support_the_project".localized,
+                        subtitle: "support_the_project_description".localized,
+                        icon: "cup.and.saucer.fill",
+                        color: Color(hex: "#FF5E5B")
+                    )
+                }
             }
 
             Section(header: Text("troubleshooting".localized)) {

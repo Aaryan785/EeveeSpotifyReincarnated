@@ -144,6 +144,9 @@ liked_songs = "Liked songs";
 contributors = "Contributors";
 developer_note = "Developer's Note";
 
+support_the_project = "Support the Project";
+support_the_project_description = "Your contributions keep this tweak updated and help buy Hysan a courage potion for Elsa.";
+
 request_anonymous_token = "Request Anonymous Token";
 request_anonymous_token_description = "Tap “Request Anonymous Token” to request a token from Musixmatch without authorization.";
 

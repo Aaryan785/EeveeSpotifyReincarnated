@@ -285,3 +285,7 @@ managingSegmentsSectionDeps2 = "设置 → “上报与草稿” 中存放你未
 categoriesTitle = "分类";
 categoriesSectionTitle1 = "按分类设置操作";
 categoriesSectionDeps1 = "关闭 = 忽略。显示 = 仅在进度条上标记。手动 = 跳过前询问。自动 = 静默跳过。";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "支持本项目";
+support_the_project_description = "你的支持让这个 tweak 持续更新，也帮 Hysan 给 Elsa 买一份勇气的药剂。";

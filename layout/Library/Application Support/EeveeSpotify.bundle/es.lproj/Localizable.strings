@@ -151,3 +151,7 @@ debug_log_cleared_ok = "Vale";
 no_debug_log_found = "No se encontró archivo de depuración. El registro comienza a grabarse cuando se inicia la aplicación.";
 no_debug_log_found_ok = "Vale";
 debug_section_footer = "Exportar o limpiar el archivo de depuración.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Apoya el proyecto";
+support_the_project_description = "Tus aportaciones mantienen actualizada esta modificación y ayudan a comprarle a Hysan una poción de valor para Elsa.";

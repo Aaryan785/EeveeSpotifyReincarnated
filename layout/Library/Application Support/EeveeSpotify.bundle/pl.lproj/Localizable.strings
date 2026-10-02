@@ -298,3 +298,7 @@ managingSegmentsSectionDeps2 = "Ustawienia → „Zgłoszenia i szkice” przech
 categoriesTitle = "Kategorie";
 categoriesSectionTitle1 = "Akcje dla kategorii";
 categoriesSectionDeps1 = "Wył. = ignoruj. Pokaż = tylko rysuj na pasku. Ręcznie = pytaj przed pominięciem. Auto = pomijaj bez pytania.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Wesprzyj projekt";
+support_the_project_description = "Twoje wkłady utrzymują ten mod aktualnym i pomagają Hysanowi kupić miksturę odwagi dla Elsy.";

@@ -139,3 +139,7 @@ play_songs_in_any_order = "Geet lai junsukai order ma play garne";
 organize_listening_queue = "Listening queue lai organize garne";
 
 payment_notice = "EeveeSpotify le patches apply garchha certain Premium subidha unlock garna ko lagi. Yo free chha.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "परियोजनालाई सहयोग गर्नुहोस्";
+support_the_project_description = "तपाईंको योगदानले यो tweak अद्यावधिक राख्छ र Hysan ले Elsa को लागि साहसको पोसन किन्न मद्दत गर्छ।";

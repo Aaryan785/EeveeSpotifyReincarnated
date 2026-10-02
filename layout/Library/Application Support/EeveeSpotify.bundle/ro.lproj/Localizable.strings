@@ -113,3 +113,7 @@ contributors = "Contributori";
 
 request_anonymous_token = "Solicitare Token anonim";
 request_anonymous_token_description = "Atingeți „Solicitare Token anonim” pentru a solicita un token de la Musixmatch fără autorizație.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Sprijină proiectul";
+support_the_project_description = "Contribuțiile tale păstrează acest tweak la zi și îl ajută pe Hysan să cumpere un elixir de curaj pentru Elsa.";

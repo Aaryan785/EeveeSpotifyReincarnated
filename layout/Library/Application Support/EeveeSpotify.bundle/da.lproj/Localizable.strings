@@ -139,3 +139,7 @@ play_songs_in_any_order = "Afspil sange i den rækkefølge, du foretrækker";
 organize_listening_queue = "Rediger rækkefølgen på afspilningskøen";
 
 payment_notice = "EeveeSpotify tilføjer patches for at låse op for visse Premium-funktioner. Dette er gratis.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Støt projektet";
+support_the_project_description = "Dine bidrag holder denne tweak opdateret og hjælper med at købe en livsgnist til Hysan til Elsa.";

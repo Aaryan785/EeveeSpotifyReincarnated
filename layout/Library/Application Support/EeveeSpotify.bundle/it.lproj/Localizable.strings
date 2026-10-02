@@ -282,3 +282,7 @@ eevee_inline_subtitle_text = "Patch, testi, personalizzazioni ed esperimenti";
 categoriesTitle = "Categorie";
 categoriesSectionTitle1 = "Azioni per categoria";
 categoriesSectionDeps1 = "Off = ignora. Mostra = evidenzia solo sulla barra. Manuale = chiedi prima di saltare. Auto = salta in automatico.";
+
+// Support the Project, links to Ko-fi in EeveeSettingsView
+support_the_project = "Sostieni il progetto";
+support_the_project_description = "I tuoi contributi mantengono aggiornato questo tweak e aiutano Hysan a comprare una pozione di coraggio per Elsa.";
