@@ -73,8 +73,10 @@ enum GlassNowPlayingBar {
         if card.layer.cornerRadius != radius {
             card.layer.cornerRadius = radius
             card.layer.cornerCurve = .continuous
-            card.clipsToBounds = true
         }
+        // Clipping can't live in the radius check: iPad already ships a capsule corner radius, so the
+        // branch is skipped there and the artwork renders straight past the rounded corners.
+        card.clipsToBounds = true
 
         let glass = GlassKit.pane(in: host)
         pane = glass
@@ -85,11 +87,9 @@ enum GlassNowPlayingBar {
         GlassKit.tint(glass, tint)
 
         if let artwork {
-            let radius = artworkRadius(artwork)
-            if artwork.layer.cornerRadius != radius {
-                artwork.layer.cornerRadius = radius
-                artwork.clipsToBounds = true
-            }
+            artwork.layer.cornerRadius = artworkRadius(artwork)
+            artwork.layer.cornerCurve = .continuous
+            artwork.clipsToBounds = true
         }
     }
 
@@ -97,17 +97,25 @@ enum GlassNowPlayingBar {
         options.roundArtwork ? artwork.bounds.width / 2 : 12
     }
 
+    // The iPad bar is taller than the iPhone one, so a fixed 32...56pt window misses its artwork entirely.
+    // The bar's own height is the limit instead, and the leftmost qualifying view wins.
     private static func findArtwork(in card: UIView) -> UIView? {
+        let limit = card.bounds.height
+        guard limit > 0 else { return nil }
+        var best: UIView?
+        var bestMinX = CGFloat.greatestFiniteMagnitude
         var queue = card.subviews
         while !queue.isEmpty {
             let view = queue.removeFirst()
-            let size = view.bounds.size
-            if size.width >= 32, size.width <= 56, abs(size.width - size.height) < 1, view.convert(view.bounds, to: card).minX < 20 {
-                return view
-            }
             queue += view.subviews
+            let size = view.bounds.size
+            guard size.width >= 24, size.width <= limit, abs(size.width - size.height) < 1 else { continue }
+            let minX = view.convert(view.bounds, to: card).minX
+            guard minX < card.bounds.width / 3, minX < bestMinX else { continue }
+            bestMinX = minX
+            best = view
         }
-        return nil
+        return best
     }
 
     private static func findCard(in root: UIView) -> UIView? {
@@ -119,7 +127,7 @@ enum GlassNowPlayingBar {
             queue += view.subviews
             guard !(view is UIVisualEffectView), let color = view.backgroundColor, color.isOpaqueish else { continue }
             let size = view.bounds.size
-            guard size.width >= 200, size.height >= 40, size.height <= 90,
+            guard size.width >= 200, size.height >= 40, size.height <= 160,
                   root.bounds.contains(view.convert(view.bounds, to: root)) else { continue }
             if size.width * size.height > bestArea {
                 bestArea = size.width * size.height

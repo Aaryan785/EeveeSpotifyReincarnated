@@ -133,7 +133,8 @@ enum GlassTabBar {
         applyLaunchTab(tabs, title: title, label: labelOf)
         applyTint(bar)
 
-        if bar.frame != stock.bounds { bar.frame = stock.bounds }
+        let frame = barFrame(in: stock)
+        if bar.frame != frame { bar.frame = frame }
         if stock.subviews.last !== bar { stock.bringSubviewToFront(bar) }
     }
 
@@ -212,14 +213,28 @@ enum GlassTabBar {
         iconIsActive(tab) == true || label?.textColor.isWhite == true
     }
 
+    // Spotify lays its iPad tab bar out as a short full-width strip, well under the height a tab bar
+    // needs for an icon plus a label. Inheriting that height squashes the items, so the glass bar gets
+    // a floor of its own and is centred on Spotify's strip to keep the row where it was.
+    private static let minimumBarHeight: CGFloat = 50
+
+    private static func barFrame(in stock: UIView) -> CGRect {
+        let bounds = stock.bounds
+        guard bounds.height > 0, bounds.height < minimumBarHeight else { return bounds }
+        return CGRect(x: bounds.minX, y: bounds.midY - minimumBarHeight / 2,
+                      width: bounds.width, height: minimumBarHeight)
+    }
+
     private static func systemBar(on stock: UIView) -> GlassSystemTabBar {
         if let bar = objc_getAssociatedObject(stock, &barKey) as? GlassSystemTabBar { return bar }
-        let bar = GlassSystemTabBar(frame: stock.bounds)
+        let bar = GlassSystemTabBar(frame: barFrame(in: stock))
         bar.isHidden = true
         bar.overrideUserInterfaceStyle = .dark
         bar.tintColor = UIColor(red: 0.12, green: 0.84, blue: 0.38, alpha: 1)
         bar.delegate = bar
         bar.stock = stock
+        // The bar is a touch taller than Spotify's strip on iPad, so it must not be clipped away.
+        stock.clipsToBounds = false
         retries = 0
         objc_setAssociatedObject(stock, &barKey, bar, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
         stock.addSubview(bar)
