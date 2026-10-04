@@ -296,7 +296,6 @@ block_rating_prompts = "Блокувати запити оцінки";
 block_rating_prompts_footer = "Жодних спливних вікон із проханням залишити відгук в App Store. Перезапустіть, щоб застосувати.";
 spicylyrics_key_invalid = "Ключ API Spicy Lyrics відхилено";
 spicylyrics_api_key = "Ключ API Spicy Lyrics";
-spicylyrics_api_key_placeholder = "Вбудований ключ";
 spicylyrics_api_key_description = "Залиште порожнім, щоб використовувати вбудований ключ.";
 lyrics_made_by = "Автор";
 lyrics_uploaded_by = "Завантажив";

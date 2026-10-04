@@ -310,7 +310,6 @@ block_rating_prompts = "Bloqueja les sol·licituds de valoració";
 block_rating_prompts_footer = "Sense finestres emergents de ressenya de l'App Store. Reinicia per aplicar.";
 spicylyrics_key_invalid = "Clau d'API de Spicy Lyrics rebutjada";
 spicylyrics_api_key = "Clau d'API de Spicy Lyrics";
-spicylyrics_api_key_placeholder = "Clau integrada";
 spicylyrics_api_key_description = "Deixa-ho buit per utilitzar la clau integrada.";
 lyrics_made_by = "Creat per";
 lyrics_uploaded_by = "Pujat per";

@@ -271,7 +271,6 @@ block_rating_prompts = "Blochează solicitările de evaluare";
 block_rating_prompts_footer = "Fără ferestre de recenzie App Store. Repornește pentru a aplica.";
 spicylyrics_key_invalid = "Cheia API Spicy Lyrics a fost respinsă";
 spicylyrics_api_key = "Cheie API Spicy Lyrics";
-spicylyrics_api_key_placeholder = "Cheie încorporată";
 spicylyrics_api_key_description = "Lasă gol pentru a folosi cheia încorporată.";
 lyrics_made_by = "Creat de";
 lyrics_uploaded_by = "Încărcat de";

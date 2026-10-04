@@ -20,7 +20,11 @@ struct KaraokeLyricsView: View {
     var body: some View {
         GeometryReader { geo in
             ZStack(alignment: .topTrailing) {
-                KaraokeBackgroundView()
+                if KaraokeGlass.isEnabled {
+                    KaraokeGlassBackground().ignoresSafeArea()
+                } else {
+                    KaraokeBackgroundView()
+                }
                 content(screenWidth: geo.size.width)
                 closeButton
             }
@@ -53,13 +57,21 @@ struct KaraokeLyricsView: View {
         return nil
     }
 
+    @ViewBuilder private var closeButtonBackground: some View {
+        if KaraokeGlass.isEnabled {
+            KaraokeGlassCapsule()
+        } else {
+            Circle().fill(Color.white.opacity(0.12))
+        }
+    }
+
     private var closeButton: some View {
         Button(action: onDismiss) {
             Image(systemName: "chevron.down")
                 .font(.system(size: 18, weight: .semibold))
                 .foregroundColor(.white.opacity(0.85))
                 .padding(14)
-                .background(Circle().fill(Color.white.opacity(0.12)))
+                .background(closeButtonBackground)
         }
         .padding(.top, 50)
         .padding(.trailing, 20)

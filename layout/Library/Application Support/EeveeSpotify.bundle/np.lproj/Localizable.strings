@@ -297,7 +297,6 @@ block_rating_prompts = "मूल्याङ्कन अनुरोधहर�
 block_rating_prompts_footer = "App Store समीक्षा पपअप छैन। लागू गर्न रिस्टार्ट गर्नुहोस्।";
 spicylyrics_key_invalid = "Spicy Lyrics API कुञ्जी अस्वीकार गरियो";
 spicylyrics_api_key = "Spicy Lyrics API कुञ्जी";
-spicylyrics_api_key_placeholder = "अन्तर्निर्मित कुञ्जी";
 spicylyrics_api_key_description = "अन्तर्निर्मित कुञ्जी प्रयोग गर्न खाली छोड्नुहोस्।";
 lyrics_made_by = "बनाउने";
 lyrics_uploaded_by = "अपलोड गर्ने";

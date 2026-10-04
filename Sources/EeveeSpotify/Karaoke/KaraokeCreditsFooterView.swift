@@ -4,7 +4,7 @@ struct KaraokeCreditsFooterView: View {
     let lyrics: KaraokeLyricsDto
 
     private var providerLabel: String? {
-        nonEmpty(lyrics.providerCode).map { _ in SpicyLyricsRepository.providerName }
+        nonEmpty(lyrics.providerName) ?? nonEmpty(lyrics.providerCode).map { _ in SpicyLyricsRepository.providerName }
     }
 
     private func nonEmpty(_ value: String?) -> String? {

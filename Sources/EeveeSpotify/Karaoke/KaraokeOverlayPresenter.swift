@@ -12,8 +12,8 @@ final class KaraokeOverlayPresenter {
 
     static func present() {
         guard !isPresented else { return }
-        guard UserDefaults.karaokeOptions.enabled else {
-            writeDebugLog("[Karaoke] present() skipped: custom lyrics view disabled in settings")
+        guard UserDefaults.karaokeOptions.enabled, UserDefaults.lyricsSource.supportsCustomLyricsView else {
+            writeDebugLog("[Karaoke] present() skipped: custom lyrics view disabled in settings or unsupported by the lyrics source")
             return
         }
         guard #available(iOS 15.0, *) else {
@@ -36,8 +36,10 @@ final class KaraokeOverlayPresenter {
         })
         let hosting = UIHostingController(rootView: view)
         hosting.overrideUserInterfaceStyle = .dark
-        hosting.modalPresentationStyle = .fullScreen
-        hosting.view.backgroundColor = .black
+        // Glass needs the player visible behind it; the animated backdrop is opaque.
+        let glass = KaraokeGlass.isEnabled
+        hosting.modalPresentationStyle = glass ? .overFullScreen : .fullScreen
+        hosting.view.backgroundColor = glass ? .clear : .black
 
         isPresented = true
         host.present(hosting, animated: true)
@@ -47,7 +49,7 @@ final class KaraokeOverlayPresenter {
     /// whatever decides whether to show a "Karaoke" button at all) should
     /// check this rather than always presenting and risking a no-op.
     static func isAvailableForCurrentTrack() -> Bool {
-        guard UserDefaults.karaokeOptions.enabled else { return false }
+        guard UserDefaults.karaokeOptions.enabled, UserDefaults.lyricsSource.supportsCustomLyricsView else { return false }
         guard let trackId = KaraokePlaybackTracker.shared.currentTrackId() else { return false }
         return KaraokeLyricsStore.shared.lyrics(forTrackId: trackId) != nil
     }

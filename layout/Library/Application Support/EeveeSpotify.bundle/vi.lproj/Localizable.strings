@@ -444,7 +444,6 @@ block_rating_prompts = "Chặn yêu cầu đánh giá";
 block_rating_prompts_footer = "Không có cửa sổ bật lên đánh giá App Store. Khởi động lại để áp dụng.";
 spicylyrics_key_invalid = "Khóa API Spicy Lyrics bị từ chối";
 spicylyrics_api_key = "Khóa API Spicy Lyrics";
-spicylyrics_api_key_placeholder = "Khóa tích hợp";
 spicylyrics_api_key_description = "Để trống để dùng khóa tích hợp.";
 lyrics_made_by = "Tạo bởi";
 lyrics_uploaded_by = "Tải lên bởi";

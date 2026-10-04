@@ -268,7 +268,6 @@ block_rating_prompts = "Bloquear pedidos de avaliação";
 block_rating_prompts_footer = "Sem pop-ups de avaliação da App Store. Reinicia para aplicar.";
 spicylyrics_key_invalid = "Chave de API do Spicy Lyrics rejeitada";
 spicylyrics_api_key = "Chave de API do Spicy Lyrics";
-spicylyrics_api_key_placeholder = "Chave integrada";
 spicylyrics_api_key_description = "Deixa vazio para usar a chave integrada.";
 lyrics_made_by = "Feito por";
 lyrics_uploaded_by = "Enviado por";

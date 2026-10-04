@@ -45,6 +45,18 @@ final class KaraokeLyricsStore {
         notify()
     }
 
+    /// Drops a track's entry. Called before every fresh fetch so a result from an
+    /// earlier source (or an earlier attempt) can never keep the button alive
+    /// for a track whose current fetch found nothing.
+    func remove(trackId: String) {
+        guard !trackId.isEmpty else { return }
+        lock.lock()
+        let hadEntry = cache.removeValue(forKey: trackId) != nil
+        order.removeAll { $0 == trackId }
+        lock.unlock()
+        if hadEntry { notify() }
+    }
+
     func lyrics(forTrackId trackId: String) -> KaraokeLyricsDto? {
         lock.lock()
         defer { lock.unlock() }

@@ -456,7 +456,6 @@ block_rating_prompts = "Blokuj prośby o ocenę";
 block_rating_prompts_footer = "Brak wyskakujących okien z prośbą o recenzję w App Store. Uruchom ponownie, aby zastosować.";
 spicylyrics_key_invalid = "Klucz API Spicy Lyrics odrzucony";
 spicylyrics_api_key = "Klucz API Spicy Lyrics";
-spicylyrics_api_key_placeholder = "Wbudowany klucz";
 spicylyrics_api_key_description = "Zostaw puste, aby użyć wbudowanego klucza.";
 lyrics_made_by = "Autor";
 lyrics_uploaded_by = "Przesłał";

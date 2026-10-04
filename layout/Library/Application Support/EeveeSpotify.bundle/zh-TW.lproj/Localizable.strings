@@ -454,7 +454,6 @@ block_rating_prompts = "阻止評分提示";
 block_rating_prompts_footer = "不顯示 App Store 評價彈窗。重啟以套用。";
 spicylyrics_key_invalid = "Spicy Lyrics API 金鑰被拒絕";
 spicylyrics_api_key = "Spicy Lyrics API 金鑰";
-spicylyrics_api_key_placeholder = "內建金鑰";
 spicylyrics_api_key_description = "留空則使用內建金鑰。";
 lyrics_made_by = "製作者";
 lyrics_uploaded_by = "上傳者";

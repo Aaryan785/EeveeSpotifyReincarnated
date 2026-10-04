@@ -3,12 +3,12 @@ import SwiftUI
 struct EeveeLyricsSettingsView: View {
     @StateObject var viewModel = EeveeLyricsSettingsViewModel()
     @State private var karaokeOptions: KaraokeOptions = UserDefaults.karaokeOptions
-    @State private var spicyLyricsApiKey: String = UserDefaults.spicyLyricsApiKey
+    @State var spicyLyricsApiKey: String = UserDefaults.spicyLyricsApiKey
 
     var body: some View {
         List {
             lyricsSourceSection()
-            
+
             if viewModel.lyricsSource != .notReplaced {
                 if viewModel.lyricsSource != .genius {
                     geniusFallbackSection()
@@ -21,8 +21,7 @@ struct EeveeLyricsSettingsView: View {
                     musixmatchLanguageSection()
                 }
 
-                if viewModel.lyricsSource == .spicylyrics {
-                    spicyLyricsApiKeySection()
+                if viewModel.lyricsSource.supportsCustomLyricsView {
                     karaokeAppearanceSection()
                     SettingsResetSection(visible: karaokeOptions != KaraokeOptions()) { karaokeOptions = KaraokeOptions() }
                 }
@@ -38,18 +37,6 @@ struct EeveeLyricsSettingsView: View {
         .animation(.default, value: viewModel.animationValues)
         .onChange(of: karaokeOptions) { UserDefaults.karaokeOptions = $0 }
         .onChange(of: spicyLyricsApiKey) { UserDefaults.spicyLyricsApiKey = $0 }
-    }
-
-    @ViewBuilder private func spicyLyricsApiKeySection() -> some View {
-        Section {
-            TextField("spicylyrics_api_key_placeholder".localized, text: $spicyLyricsApiKey)
-                .autocapitalization(.none)
-                .disableAutocorrection(true)
-        } header: {
-            Text("spicylyrics_api_key".localized)
-        } footer: {
-            Text("spicylyrics_api_key_description".localized)
-        }
     }
 
     @ViewBuilder private func karaokeAppearanceSection() -> some View {

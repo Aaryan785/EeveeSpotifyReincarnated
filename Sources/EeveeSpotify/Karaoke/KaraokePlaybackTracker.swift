@@ -18,6 +18,8 @@ final class KaraokePlaybackTracker {
     private var lastPlaybackSpeed: Double = 1.0
     private var lastIsPlaying: Bool = false
     private var lastTrackId: String?
+    // Only ever set from the player observer, unlike lastTrackId (which a lyrics fetch also sets).
+    private var observedTrackId: String?
 
     private var didDumpStateShape = false
 
@@ -77,13 +79,27 @@ final class KaraokePlaybackTracker {
         let playbackSpeed: Double = (safeValue("playbackSpeed") as? NSNumber)?.doubleValue ?? lastPlaybackSpeed
         let isPlaying: Bool = (safeValue("isPlaying") as? Bool) ?? lastIsPlaying
 
+        // A state whose item is not a music track (podcast episode, ad, local file)
+        // means the previous track's lyrics no longer apply.
+        let isNonTrackItem = trackId == nil && !uriString.isEmpty
+
         queue.async {
             self.lastPosition = positionRaw
             self.lastPositionStamp = self.uptimeSec()
             self.lastPlaybackSpeed = playbackSpeed
             self.lastIsPlaying = isPlaying
+
+            let previousTrackId = self.lastTrackId
             if let trackId = trackId, !trackId.isEmpty {
                 self.lastTrackId = trackId
+                self.observedTrackId = trackId
+            } else if isNonTrackItem {
+                self.lastTrackId = nil
+                self.observedTrackId = nil
+            }
+            // Button visibility follows the track, so tell it when the track changes.
+            if self.lastTrackId != previousTrackId {
+                KaraokeLyricsStore.shared.notify()
             }
         }
     }
@@ -109,6 +125,11 @@ final class KaraokePlaybackTracker {
                 : lastPosition
             return Int(max(0, estSeconds) * 1000)
         }
+    }
+
+    /// The track the player itself reports as playing, or nil when the observer hasn't reported one.
+    func playerReportedTrackId() -> String? {
+        queue.sync { observedTrackId }
     }
 
     func currentTrackId() -> String? {

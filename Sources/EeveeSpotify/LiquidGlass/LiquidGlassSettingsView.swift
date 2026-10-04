@@ -9,7 +9,7 @@ struct LiquidGlassSettingsView: View {
     }()
 
     private var surfacesDefault: Bool {
-        glass.spotifyGlass && glass.tabBar && glass.nowPlayingBar && glass.search != false && glass.home != false && glass.playlist != false
+        glass.spotifyGlass && glass.tabBar && glass.nowPlayingBar && glass.search != false && glass.home != false && glass.playlist != false && glass.lyricsView != false
     }
 
     var body: some View {
@@ -27,6 +27,7 @@ struct LiquidGlassSettingsView: View {
                     SettingsToggle(title: "glass_search".localized, icon: "magnifyingglass", color: .orange, isOn: optIn(\.search))
                     SettingsToggle(title: "glass_home".localized, icon: "house.fill", color: .purple, isOn: optIn(\.home))
                     SettingsToggle(title: "glass_playlist".localized, icon: "music.note.list", color: .pink, isOn: optIn(\.playlist))
+                    SettingsToggle(title: "glass_lyrics_view".localized, icon: "quote.bubble.fill", color: Color(hex: "#30B0C7"), isOn: optIn(\.lyricsView))
                 }
 
                 if glass.tabBar {
@@ -44,6 +45,7 @@ struct LiquidGlassSettingsView: View {
                     glass.search = nil
                     glass.home = nil
                     glass.playlist = nil
+                    glass.lyricsView = nil
                 }
             }
 

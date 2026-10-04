@@ -297,7 +297,6 @@ block_rating_prompts = "Bloker anmodninger om vurdering";
 block_rating_prompts_footer = "Ingen App Store-anmeldelsespop-ups. Genstart for at anvende.";
 spicylyrics_key_invalid = "Spicy Lyrics API-nøgle afvist";
 spicylyrics_api_key = "Spicy Lyrics API-nøgle";
-spicylyrics_api_key_placeholder = "Indbygget nøgle";
 spicylyrics_api_key_description = "Lad feltet stå tomt for at bruge den indbyggede nøgle.";
 lyrics_made_by = "Lavet af";
 lyrics_uploaded_by = "Uploadet af";

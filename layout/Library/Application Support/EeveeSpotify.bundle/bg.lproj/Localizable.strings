@@ -257,7 +257,6 @@ block_rating_prompts = "Блокиране на заявки за оценка";
 block_rating_prompts_footer = "Без изскачащи прозорци за ревю в App Store. Рестартирайте за прилагане.";
 spicylyrics_key_invalid = "API ключът на Spicy Lyrics е отхвърлен";
 spicylyrics_api_key = "API ключ на Spicy Lyrics";
-spicylyrics_api_key_placeholder = "Вграден ключ";
 spicylyrics_api_key_description = "Оставете празно, за да използвате вградения ключ.";
 lyrics_made_by = "Създадено от";
 lyrics_uploaded_by = "Качено от";

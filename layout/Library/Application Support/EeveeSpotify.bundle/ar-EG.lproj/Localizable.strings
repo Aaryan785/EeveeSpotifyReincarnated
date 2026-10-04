@@ -444,7 +444,6 @@ block_rating_prompts = "حظر طلبات التقييم";
 block_rating_prompts_footer = "مفيش نوافذ تقييم من App Store. أعد التشغيل للتطبيق.";
 spicylyrics_key_invalid = "مفتاح Spicy Lyrics API اترفض";
 spicylyrics_api_key = "مفتاح Spicy Lyrics API";
-spicylyrics_api_key_placeholder = "مفتاح مدمج";
 spicylyrics_api_key_description = "سيبه فاضي علشان تستخدم المفتاح المدمج.";
 lyrics_made_by = "من إعداد";
 lyrics_uploaded_by = "رفعه";

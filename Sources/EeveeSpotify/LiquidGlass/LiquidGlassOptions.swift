@@ -9,6 +9,7 @@ struct LiquidGlassOptions: Codable, Equatable {
     var search: Bool?
     var home: Bool?
     var playlist: Bool?
+    var lyricsView: Bool?
 }
 
 struct TabBarOptions: Codable, Equatable {

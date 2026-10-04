@@ -72,6 +72,10 @@ extension EeveeLyricsSettingsView {
                 if viewModel.lyricsSource == .musixmatch {
                     musixmatchTokenField()
                 }
+
+                if viewModel.lyricsSource == .spicylyrics {
+                    spicyLyricsApiKeyField()
+                }
                 
                 if viewModel.lyricsSource == .lrclib {
                     lrclibURLField()
@@ -113,6 +117,18 @@ extension EeveeLyricsSettingsView {
         .disabled(viewModel.isRequestingMusixmatchToken)
     }
     
+    @ViewBuilder private func spicyLyricsApiKeyField() -> some View {
+        VStack(alignment: .leading, spacing: 5) {
+            Text("spicylyrics_api_key".localized)
+
+            TextField("spicylyrics_api_key_placeholder".localized, text: $spicyLyricsApiKey)
+                .foregroundColor(.gray)
+                .autocapitalization(.none)
+                .disableAutocorrection(true)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
     @ViewBuilder private func lrclibURLField() -> some View {
         VStack(alignment: .leading, spacing: 5) {
             Text("lrclib_api".localized)

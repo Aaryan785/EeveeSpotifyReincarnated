@@ -89,6 +89,8 @@ struct KaraokeLyricsDto {
 
     var songWriters: [String]
     var providerCode: String?
+    /// Display name for the credits footer. Nil keeps the old behaviour (Spicy Lyrics when `providerCode` is set).
+    var providerName: String? = nil
     var uploaderName: String? = nil
     var uploaderUrl: String? = nil
     var makerName: String? = nil

@@ -24,7 +24,7 @@ enum KaraokeFooterButton {
 
     private static let button: UIButton = {
         var config: UIButton.Configuration
-        if #available(iOS 26.0, *) {
+        if #available(iOS 26.0, *), KaraokeGlass.isEnabled {
             config = .glass()
         } else {
             config = .plain()
@@ -72,7 +72,7 @@ enum KaraokeFooterButton {
 }
 
 func activateKaraokeFooterButton() {
-    guard #available(iOS 15.0, *), UserDefaults.lyricsSource == .spicylyrics else { return }
+    guard #available(iOS 15.0, *), UserDefaults.lyricsSource.supportsCustomLyricsView else { return }
     let start = CFAbsoluteTimeGetCurrent()
     guard NSClassFromString(KaraokeFooterUnitHook.targetName) != nil else {
         eeveeLog("[EeveeSpotify][Karaoke] Footer button skipped: footer unit missing")

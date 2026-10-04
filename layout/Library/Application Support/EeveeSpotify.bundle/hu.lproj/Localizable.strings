@@ -271,7 +271,6 @@ block_rating_prompts = "Értékelési kérések tiltása";
 block_rating_prompts_footer = "Nincsenek App Store-értékelési felugró ablakok. Indítsd újra az alkalmazáshoz.";
 spicylyrics_key_invalid = "A Spicy Lyrics API-kulcsot elutasították";
 spicylyrics_api_key = "Spicy Lyrics API-kulcs";
-spicylyrics_api_key_placeholder = "Beépített kulcs";
 spicylyrics_api_key_description = "Hagyd üresen a beépített kulcs használatához.";
 lyrics_made_by = "Készítette";
 lyrics_uploaded_by = "Feltöltötte";

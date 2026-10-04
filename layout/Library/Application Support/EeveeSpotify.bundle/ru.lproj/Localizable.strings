@@ -295,7 +295,6 @@ block_rating_prompts = "Блокировать запросы оценки";
 block_rating_prompts_footer = "Без всплывающих окон с просьбой оставить отзыв в App Store. Перезапустите, чтобы применить.";
 spicylyrics_key_invalid = "Ключ API Spicy Lyrics отклонён";
 spicylyrics_api_key = "Ключ API Spicy Lyrics";
-spicylyrics_api_key_placeholder = "Встроенный ключ";
 spicylyrics_api_key_description = "Оставьте пустым, чтобы использовать встроенный ключ.";
 lyrics_made_by = "Автор";
 lyrics_uploaded_by = "Загрузил";

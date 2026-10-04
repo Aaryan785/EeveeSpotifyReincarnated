@@ -297,7 +297,6 @@ block_rating_prompts = "評価リクエストをブロック";
 block_rating_prompts_footer = "App Storeのレビューポップアップを表示しません。再起動して適用します。";
 spicylyrics_key_invalid = "Spicy Lyrics APIキーが拒否されました";
 spicylyrics_api_key = "Spicy Lyrics APIキー";
-spicylyrics_api_key_placeholder = "内蔵キー";
 spicylyrics_api_key_description = "空欄にすると内蔵キーを使用します。";
 lyrics_made_by = "作成者";
 lyrics_uploaded_by = "アップロード者";

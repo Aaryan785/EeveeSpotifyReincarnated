@@ -454,7 +454,6 @@ block_rating_prompts = "Puanlama isteklerini engelle";
 block_rating_prompts_footer = "App Store inceleme pencereleri çıkmaz. Uygulamak için yeniden başlatın.";
 spicylyrics_key_invalid = "Spicy Lyrics API anahtarı reddedildi";
 spicylyrics_api_key = "Spicy Lyrics API Anahtarı";
-spicylyrics_api_key_placeholder = "Yerleşik anahtar";
 spicylyrics_api_key_description = "Yerleşik anahtarı kullanmak için boş bırakın.";
 lyrics_made_by = "Yapan";
 lyrics_uploaded_by = "Yükleyen";

@@ -137,6 +137,7 @@ class KaraokeStateObservableProbeHook: ClassHook<NSObject> {
 }
 
 func activateKaraokeHooks() {
+    _ = LyricsLaunchSource.value
     // Mirrors the same two-name fallback as KaraokePlayerServiceObserverHook
     // above — this is only the startup diagnostic log, but it should report
     // the same "found" outcome as whichever name the hook itself resolves,

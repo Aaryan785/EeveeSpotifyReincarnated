@@ -273,7 +273,6 @@ block_rating_prompts = "Blokiraj zahtjeve za ocjenjivanje";
 block_rating_prompts_footer = "Bez skočnih prozora za recenziju App Storea. Ponovno pokreni za primjenu.";
 spicylyrics_key_invalid = "Spicy Lyrics API ključ odbijen";
 spicylyrics_api_key = "Spicy Lyrics API ključ";
-spicylyrics_api_key_placeholder = "Ugrađeni ključ";
 spicylyrics_api_key_description = "Ostavi prazno za korištenje ugrađenog ključa.";
 lyrics_made_by = "Izradio";
 lyrics_uploaded_by = "Učitao";

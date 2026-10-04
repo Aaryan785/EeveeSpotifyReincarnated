@@ -256,7 +256,6 @@ block_rating_prompts = "평가 요청 차단";
 block_rating_prompts_footer = "App Store 리뷰 팝업이 표시되지 않습니다. 적용하려면 다시 시작하세요.";
 spicylyrics_key_invalid = "Spicy Lyrics API 키가 거부되었습니다";
 spicylyrics_api_key = "Spicy Lyrics API 키";
-spicylyrics_api_key_placeholder = "내장 키";
 spicylyrics_api_key_description = "비워 두면 내장 키를 사용합니다.";
 lyrics_made_by = "제작";
 lyrics_uploaded_by = "업로드";

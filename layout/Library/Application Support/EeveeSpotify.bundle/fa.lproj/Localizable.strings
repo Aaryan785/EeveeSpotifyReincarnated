@@ -444,7 +444,6 @@ block_rating_prompts = "مسدود کردن درخواست امتیازدهی";
 block_rating_prompts_footer = "بدون پنجره‌های بازبینی App Store. برای اعمال، ری‌استارت کنید.";
 spicylyrics_key_invalid = "کلید API ـ Spicy Lyrics رد شد";
 spicylyrics_api_key = "کلید API ـ Spicy Lyrics";
-spicylyrics_api_key_placeholder = "کلید داخلی";
 spicylyrics_api_key_description = "برای استفاده از کلید داخلی خالی بگذارید.";
 lyrics_made_by = "ساخته‌شده توسط";
 lyrics_uploaded_by = "بارگذاری‌شده توسط";

@@ -258,7 +258,6 @@ block_rating_prompts = "Bewertungsaufforderungen blockieren";
 block_rating_prompts_footer = "Keine App-Store-Bewertungs-Popups. Zum Anwenden neu starten.";
 spicylyrics_key_invalid = "Spicy-Lyrics-API-Schlüssel abgelehnt";
 spicylyrics_api_key = "Spicy-Lyrics-API-Schlüssel";
-spicylyrics_api_key_placeholder = "Integrierter Schlüssel";
 spicylyrics_api_key_description = "Leer lassen, um den integrierten Schlüssel zu verwenden.";
 lyrics_made_by = "Erstellt von";
 lyrics_uploaded_by = "Hochgeladen von";

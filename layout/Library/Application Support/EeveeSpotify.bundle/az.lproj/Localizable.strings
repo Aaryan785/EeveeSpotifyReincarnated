@@ -260,7 +260,6 @@ block_rating_prompts = "Qiymətləndirmə sorğularını blokla";
 block_rating_prompts_footer = "App Store rəy pəncərələri çıxmır. Tətbiq etmək üçün yenidən başladın.";
 spicylyrics_key_invalid = "Spicy Lyrics API açarı rədd edildi";
 spicylyrics_api_key = "Spicy Lyrics API açarı";
-spicylyrics_api_key_placeholder = "Daxili açar";
 spicylyrics_api_key_description = "Daxili açardan istifadə etmək üçün boş saxlayın.";
 lyrics_made_by = "Hazırlayan";
 lyrics_uploaded_by = "Yükləyən";
