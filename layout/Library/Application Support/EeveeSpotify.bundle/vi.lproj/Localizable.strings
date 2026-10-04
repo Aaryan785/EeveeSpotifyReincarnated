@@ -517,3 +517,16 @@ karaoke_word_synced_button = "Chế độ xem lời bài hát tùy chỉnh";
 debug_logging = "Ghi nhật ký gỡ lỗi";
 karaoke_enabled = "Chế độ xem lời bài hát tùy chỉnh";
 karaoke_blur_intensity = "Cường độ làm mờ";
+
+/* MARK: Added to match en.lproj */
+
+miscellaneous = "Khác";
+clean_share_links = "Làm sạch liên kết chia sẻ";
+clean_share_links_description = "Xóa các tham số theo dõi khỏi liên kết được chia sẻ.";
+developer_note = "Ghi chú của nhà phát triển";
+prettifyIconNames = "Làm đẹp tên biểu tượng";
+prettifyIconNamesDescription = "Chuyển dấu gạch dưới, dấu gạch ngang và camelCase thành khoảng trắng";
+spicylyrics_api_key_placeholder = "Nhập khóa client Spicy";
+glass_lyrics_view = "Chế độ xem lời bài hát tùy chỉnh";
+lyrics_source_restart_popup = "Khởi động lại Spotify để nguồn lời bài hát mới được dùng ở mọi nơi. Các bài đã phát trước đó sẽ giữ lời cũ cho đến khi đó.";
+restart_later = "Để sau";

@@ -527,3 +527,11 @@ karaoke_word_synced_button = "自定義歌詞檢視";
 debug_logging = "除錯日誌";
 karaoke_enabled = "自定義歌詞檢視";
 karaoke_blur_intensity = "模糊強度";
+
+/* MARK: Added to match en.lproj */
+
+developer_note = "開發者說明";
+spicylyrics_api_key_placeholder = "輸入 Spicy 用戶端金鑰";
+glass_lyrics_view = "自定義歌詞檢視";
+lyrics_source_restart_popup = "請重新啟動 Spotify，讓新的歌詞來源在所有位置生效。在此之前，已播放過的歌曲會保留舊歌詞。";
+restart_later = "稍後";

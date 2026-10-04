@@ -517,3 +517,15 @@ karaoke_word_synced_button = "نمای سفارشی متن آهنگ";
 debug_logging = "گزارش اشکال‌زدایی";
 karaoke_enabled = "نمای سفارشی متن آهنگ";
 karaoke_blur_intensity = "شدت محوشدگی";
+
+/* MARK: Added to match en.lproj */
+
+miscellaneous = "متفرقه";
+clean_share_links = "پاکسازی لینک‌های اشتراک‌گذاری";
+clean_share_links_description = "پارامترهای ردیابی را از لینک‌های اشتراک‌گذاری‌شده حذف می‌کند.";
+could_not_share_popup = "اشتراک‌گذاری در مقصد انتخاب‌شده یا LiveContainer ممکن نشد. نشانی اینترنتی کپی شد.";
+spicylyrics_api_key_placeholder = "کلید کلاینت Spicy را وارد کنید";
+glass_lyrics_view = "نمای سفارشی متن آهنگ";
+lyrics_source_restart_popup = "Spotify را مجدداً راه‌اندازی کنید تا منبع جدید متن آهنگ همه‌جا استفاده شود. آهنگ‌هایی که قبلاً پخش کرده‌اید تا آن زمان متن قبلی خود را حفظ می‌کنند.";
+restart_later = "بعداً";
+developer_note = "یادداشت توسعه‌دهنده";

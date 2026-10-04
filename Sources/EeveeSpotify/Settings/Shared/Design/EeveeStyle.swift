@@ -100,7 +100,7 @@ struct SettingsHero: View {
                 .shadow(color: EeveeTheme.accent.opacity(0.45), radius: 18)
             Text("EeveeSpotify")
                 .font(.system(size: 26, weight: .bold, design: .rounded))
-            Text("v\(EeveeSpotify.version) · Spotify \(EeveeSpotify.spotifyVersion)")
+            Text("v\(EeveeSpotify.version) (build \(EeveeSpotify.buildNumber)) · Spotify \(EeveeSpotify.spotifyVersion)")
                 .font(.footnote.monospacedDigit())
                 .foregroundColor(.secondary)
         }

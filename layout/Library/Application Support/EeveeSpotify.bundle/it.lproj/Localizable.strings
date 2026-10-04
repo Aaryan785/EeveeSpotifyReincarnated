@@ -513,3 +513,19 @@ karaoke_word_synced_button = "Vista testi personalizzata";
 debug_logging = "Registrazione debug";
 karaoke_enabled = "Vista testi personalizzata";
 karaoke_blur_intensity = "Intensità della sfocatura";
+
+/* MARK: Added to match en.lproj */
+
+true_shuffle = "True Shuffle";
+true_shuffle_dec = "Impedisce a Smart Shuffle del piano gratuito di Spotify di mescolare brani consigliati nella tua coda. La riproduzione casuale resta all'interno della playlist. ";
+miscellaneous = "Varie";
+clean_share_links = "Pulisci i link di condivisione";
+clean_share_links_description = "Rimuove i parametri di tracciamento dai link condivisi.";
+developer_note = "Nota dello sviluppatore";
+prettifyIconNames = "Abbellisci i nomi delle icone";
+prettifyIconNamesDescription = "Converte trattini bassi, trattini e camelCase in spazi";
+hiddenSegmentsSB = "Segmenti nascosti (%@)";
+spicylyrics_api_key_placeholder = "Inserisci la chiave client di Spicy";
+glass_lyrics_view = "Vista testi personalizzata";
+lyrics_source_restart_popup = "Riavvia Spotify per usare la nuova fonte dei testi ovunque. Fino ad allora, le canzoni già riprodotte mantengono i testi precedenti.";
+restart_later = "Più tardi";

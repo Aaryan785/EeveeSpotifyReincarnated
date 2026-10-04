@@ -528,3 +528,10 @@ karaoke_word_synced_button = "Własny widok tekstów";
 debug_logging = "Dziennik debugowania";
 karaoke_enabled = "Własny widok tekstów";
 karaoke_blur_intensity = "Intensywność rozmycia";
+
+/* MARK: Added to match en.lproj */
+
+spicylyrics_api_key_placeholder = "Wpisz klucz klienta Spicy";
+glass_lyrics_view = "Własny widok tekstów";
+lyrics_source_restart_popup = "Uruchom Spotify ponownie, aby nowe źródło tekstów było używane wszędzie. Utwory odtworzone wcześniej zachowają dotychczasowe teksty do tego czasu.";
+restart_later = "Później";

@@ -527,3 +527,11 @@ karaoke_word_synced_button = "Özel şarkı sözü görünümü";
 debug_logging = "Hata ayıklama günlüğü";
 karaoke_enabled = "Özel şarkı sözü görünümü";
 karaoke_blur_intensity = "Bulanıklık yoğunluğu";
+
+/* MARK: Added to match en.lproj */
+
+developer_note = "Geliştirici Notu";
+spicylyrics_api_key_placeholder = "Spicy istemci anahtarını girin";
+glass_lyrics_view = "Özel şarkı sözü görünümü";
+lyrics_source_restart_popup = "Yeni söz kaynağının her yerde kullanılması için Spotify'ı yeniden başlatın. Daha önce çaldığınız şarkılar o zamana kadar eski sözlerini korur.";
+restart_later = "Sonra";

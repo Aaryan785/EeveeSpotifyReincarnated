@@ -517,3 +517,16 @@ karaoke_word_synced_button = "عرض الكلمات المخصّص";
 debug_logging = "تسجيل التصحيح";
 karaoke_enabled = "عرض الكلمات المخصّص";
 karaoke_blur_intensity = "شدّة التمويه";
+
+/* MARK: Added to match en.lproj */
+
+miscellaneous = "متنوعات";
+clean_share_links = "تنظيف روابط المشاركة";
+clean_share_links_description = "يزيل معاملات التتبع من الروابط المشاركة.";
+developer_note = "ملاحظة المطوّر";
+prettifyIconNames = "تجميل أسماء الأيقونات";
+prettifyIconNamesDescription = "يحوّل الشرطات السفلية والواصلات وصيغة camelCase إلى مسافات";
+spicylyrics_api_key_placeholder = "أدخل مفتاح عميل Spicy";
+glass_lyrics_view = "عرض الكلمات المخصّص";
+lyrics_source_restart_popup = "أعد تشغيل Spotify ليُستخدم مصدر الكلمات الجديد في كل مكان. الأغاني التي شغّلتها سابقًا تحتفظ بكلماتها القديمة حتى ذلك الحين.";
+restart_later = "لاحقًا";
