@@ -90,6 +90,7 @@ final class KaraokePlaybackTracker {
             self.lastIsPlaying = isPlaying
 
             let previousTrackId = self.lastTrackId
+            let previousObservedTrackId = self.observedTrackId
             if let trackId = trackId, !trackId.isEmpty {
                 self.lastTrackId = trackId
                 self.observedTrackId = trackId
@@ -98,7 +99,7 @@ final class KaraokePlaybackTracker {
                 self.observedTrackId = nil
             }
             // Button visibility follows the track, so tell it when the track changes.
-            if self.lastTrackId != previousTrackId {
+            if self.lastTrackId != previousTrackId || self.observedTrackId != previousObservedTrackId {
                 KaraokeLyricsStore.shared.notify()
             }
         }

@@ -30,7 +30,8 @@ final class KaraokeOverlayPresenter {
             return
         }
 
-        let view = KaraokeLyricsView(lyrics: lyrics, onDismiss: {
+        let view = KaraokeLyricsView(trackId: trackId, lyrics: lyrics, onDismiss: {
+            guard isPresented else { return }
             isPresented = false
             topVC()?.dismiss(animated: true)
         })

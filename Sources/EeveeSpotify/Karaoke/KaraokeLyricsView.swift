@@ -2,19 +2,13 @@ import SwiftUI
 
 @available(iOS 15.0, *)
 struct KaraokeLyricsView: View {
-    let lyrics: KaraokeLyricsDto
     var onDismiss: () -> Void
-    private let layouts: [KaraokeLineLayout]
+    @StateObject private var model: KaraokeLyricsViewModel
     private let options = UserDefaults.karaokeOptions
 
-    init(lyrics: KaraokeLyricsDto, onDismiss: @escaping () -> Void) {
-        self.lyrics = lyrics
+    init(trackId: String?, lyrics: KaraokeLyricsDto, onDismiss: @escaping () -> Void) {
         self.onDismiss = onDismiss
-        let songIsRTL = lyrics.isRTL
-        layouts = lyrics.lines.map { line in
-            let direction = line.strongDirection
-            return KaraokeLineLayout(words: line.words, isRTL: direction.map { $0 == .rightToLeft } ?? songIsRTL)
-        }
+        _model = StateObject(wrappedValue: KaraokeLyricsViewModel(trackId: trackId, lyrics: lyrics, onNoLyrics: onDismiss))
     }
 
     var body: some View {
@@ -25,14 +19,18 @@ struct KaraokeLyricsView: View {
                 } else {
                     KaraokeBackgroundView()
                 }
-                content(screenWidth: geo.size.width)
+                if let lyrics = model.lyrics {
+                    content(lyrics: lyrics, layouts: model.layouts, screenWidth: geo.size.width)
+                        // A new song starts from its own scroll position and state.
+                        .id(model.trackId)
+                }
                 closeButton
             }
         }
         .preferredColorScheme(.dark)
     }
 
-    private func content(screenWidth: CGFloat) -> some View {
+    private func content(lyrics: KaraokeLyricsDto, layouts: [KaraokeLineLayout], screenWidth: CGFloat) -> some View {
         TimelineView(.periodic(from: .now, by: 1.0 / 30.0)) { _ in
             let currentMs = KaraokePlaybackTracker.shared.currentPositionMs()
 
@@ -41,13 +39,13 @@ struct KaraokeLyricsView: View {
                 layouts: layouts,
                 options: options,
                 currentMs: currentMs,
-                activeLineIndex: activeLineIndex(at: currentMs),
+                activeLineIndex: activeLineIndex(in: lyrics, at: currentMs),
                 screenWidth: screenWidth
             )
         }
     }
 
-    private func activeLineIndex(at currentMs: Int) -> Int? {
+    private func activeLineIndex(in lyrics: KaraokeLyricsDto, at currentMs: Int) -> Int? {
         guard !lyrics.lines.isEmpty else { return nil }
         for (index, line) in lyrics.lines.enumerated().reversed() {
             if currentMs >= line.startMs {
